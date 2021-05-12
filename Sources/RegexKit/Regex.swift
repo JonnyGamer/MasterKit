@@ -15,17 +15,17 @@ public struct Regex {
     }
 }
 public extension String {
-    public func replacingAll(matching: Regex, with: Self) -> Self {
+    func replacingAll(matching: Regex, with: Self) -> Self {
         return replacingAll(matching: matching.this, with: with)
     }
-    public func replacingAll(matching: String, with: Self) -> Self {
+    func replacingAll(matching: String, with: Self) -> Self {
         return replacingOccurrences(of: matching, with: with, options: .regularExpression)
     }
     
-    public func replacingFirst(matching: Regex, with: Self) -> Self {
+    func replacingFirst(matching: Regex, with: Self) -> Self {
         return replacingFirst(matching: matching.this, with: with)
     }
-    public func replacingFirst(matching: String, with: Self) -> Self {
+    func replacingFirst(matching: String, with: Self) -> Self {
         if let range = range(of: matching, options: .regularExpression) {
             return self.replacingCharacters(in: range, with: with)
         }
@@ -33,11 +33,11 @@ public extension String {
     }
     
     
-    public func replacingMiddle(matching: String, with: Self) -> Self {
+    func replacingMiddle(matching: String, with: Self) -> Self {
         let foo = self.indices1(of: matching)
         return self.replacingCharacters(in: foo[foo.count/2], with: with)
     }
-    public func splitMiddle(from: String) -> (Self, Self) {
+    func splitMiddle(from: String) -> (Self, Self) {
         let foo = self.indices1(of: from)
         let wow = self.replacingCharacters(in: foo[foo.count/2], with: "|")
         let or1 = wow.split(separator: "|")
@@ -45,7 +45,7 @@ public extension String {
     }
     
     
-    public func indices(of searchTerm:String) -> [Int] {
+    func indices(of searchTerm:String) -> [Int] {
         var indices = [Int]()
         var pos = self.startIndex
         while let range = range(of: searchTerm, range: pos ..< self.endIndex) {
@@ -55,7 +55,7 @@ public extension String {
         return indices
     }
     
-    public func indices1(of searchTerm:String) -> [Range<String.Index>] {
+    func indices1(of searchTerm:String) -> [Range<String.Index>] {
         var indices = [Range<String.Index>]()
         var pos = self.startIndex
         while let range = range(of: searchTerm, range: pos ..< self.endIndex) {

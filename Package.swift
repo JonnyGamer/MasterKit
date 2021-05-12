@@ -14,25 +14,35 @@
 import PackageDescription
 
 let package = Package(
-    name: "MasterKit",
+    name: "master-kit",
     products: [
-        .library(name: "MasterKit", targets: ["MasterKit", "ReferenceKit", "RegexKit", "ExpressibleEnum"]),
+        .library(name: "MasterKit", targets: ["MasterKit"]),
         .library(name: "ReferenceKit", targets: ["ReferenceKit"]),
         .library(name: "RegexKit", targets: ["RegexKit"]),
         .library(name: "ExpressibleEnum", targets: ["ExpressibleEnum"]),
     ],
+//    dependencies: [
+//        .package(url: "https://github.com/JonnyGamer/ReferenceKit", .exact("0.0.3"))
+//    ],
     
     targets: [
-        .target(
-            name: "MasterKit",
-            dependencies: ["ReferenceKit", "RegexKit", "ExpressibleEnum"]),
-        
+        .target(name: "MasterKit", dependencies: ["ReferenceKit", "RegexKit", "ExpressibleEnum"]),
         .target(name: "ReferenceKit", dependencies: []),
         .target(name: "RegexKit", dependencies: []),
-        .target(name: "ExpressibleEnum", dependencies: ["RegexKit"]),
+        .target(name: "ExpressibleEnum", dependencies: ["RegexKit"]), //["RegexKit"]
+        
+//        .target(
+//            name: "MasterKit",
+//            dependencies: ["ReferenceKit", "RegexKit", "ExpressibleEnum"]),//, "RegexKit", "ExpressibleEnum"]),
+        
+        
+        
+        
         
         .testTarget(
             name: "MasterTests",
-            dependencies: ["MasterKit", "ReferenceKit", "RegexKit", "ExpressibleEnum"])
+            dependencies: ["MasterKit"]),//, "ReferenceKit", "RegexKit", "ExpressibleEnum"])
+        
+            
     ]
 )

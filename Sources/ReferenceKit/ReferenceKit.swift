@@ -1,4 +1,3 @@
-
 @propertyWrapper public struct Reference<T> {
     public var foo: UnsafeMutablePointer<T>
     public var wrappedValue: UnsafeMutablePointer<T> {
