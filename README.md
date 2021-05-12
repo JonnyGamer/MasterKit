@@ -1,9 +1,18 @@
 # MasterKit
 A Perfect Swift Framework. All the Extensions.
 
-- EnumExpressible
+MasterKit is a frameowork wrapper.
+
+```swift
+import MasterKit
+```
+
+ When you import it, it automatically imports these packages:
+- ExpressibleEnum
 - ReferenceKit
-- Regex
+- RegexKit
+
+You can also choose to import these packages individually.
 
 
 # ReferenceKit
@@ -11,6 +20,8 @@ A Perfect Swift Framework. All the Extensions.
 Create a reference on any Swift value (Even structs!)
 
 ```swift
+import MasterKit
+// or import ReferenceKit
 func testReference() {
     var foo = 1
     
