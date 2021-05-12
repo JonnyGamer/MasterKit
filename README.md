@@ -4,7 +4,7 @@ A Perfect Swift Framework. All the Extensions.
 
 # ReferenceKit
 
-Create references on any Swift value (Even structs!)
+Create a reference on any Swift value (Even structs!)
 
 ```swift
 func testReference() {
