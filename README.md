@@ -100,3 +100,16 @@ func testReference() {
     assert(foo == 2)
 }
 ```
+
+# RegexKit
+
+Added a Regex wrapper object. It's totally optional to use, though.
+
+Important Features:
+
+- matches(String) -> Bool
+- replacingAll(matching: String, with: String) -> String
+- replacingFirst(matching: String, with: String) -> String
+- replacingMiddle(matching: String, with: String) -> String
+- splitMiddle(from: String) -> (String, String)
+
