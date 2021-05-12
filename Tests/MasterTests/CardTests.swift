@@ -8,7 +8,8 @@
  See http://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 */
 
-@testable import MasterKit
+//@testable import MasterTests
+//@testable import ExpressibleEnum
 import XCTest
 
 enum ClosedRangeRawValueInt: ClosedRange<Int> {
@@ -51,6 +52,19 @@ enum DictRawValueString: [Int:Int] {
 enum DictRawValueStringRecursion: [Int:[Int:Int]] {
     case foo = "[5:[10:100, 1:1000], 6:[100:1000, 10:10000]]"
     case bar = "[5:[:], 6:[100:1000, 10:10000]]"
+}
+
+// This syntax is super neat!
+enum Hi: Hi?, CaseIterable {
+    // public typealias RawValue = Hi?
+    case boo = "boo"
+    case bot = "bot"
+    case too = 0
+}
+extension Hi: ExpressibleByStringLiteral {
+    init(stringLiteral value: String) {
+        self = Hi.allCases.filter { "\($0)" == value }.first!
+    }
 }
 
 

@@ -4,25 +4,65 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MasterKit.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>ReferenceKit.xcscheme_^#shared#^_</key>
+		<key>ExpressibleEnum.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>MasterKit-Package.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>MasterKit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ReferenceKit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Regex.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>RegexKit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>ExpressibleEnum</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>MasterKit</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>MasterTests</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ReferenceKit</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>Regex</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>RegexKit</key>
 		<dict>
 			<key>primary</key>
 			<true/>

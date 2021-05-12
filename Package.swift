@@ -16,14 +16,23 @@ import PackageDescription
 let package = Package(
     name: "MasterKit",
     products: [
-        .library(name: "MasterKit", targets: ["MasterKit"]),
+        .library(name: "MasterKit", targets: ["MasterKit", "ReferenceKit", "RegexKit", "ExpressibleEnum"]),
+        .library(name: "ReferenceKit", targets: ["ReferenceKit"]),
+        .library(name: "RegexKit", targets: ["RegexKit"]),
+        .library(name: "ExpressibleEnum", targets: ["ExpressibleEnum"]),
     ],
+    
     targets: [
         .target(
             name: "MasterKit",
-            dependencies: []),
+            dependencies: ["ReferenceKit", "RegexKit", "ExpressibleEnum"]),
+        
+        .target(name: "ReferenceKit", dependencies: []),
+        .target(name: "RegexKit", dependencies: []),
+        .target(name: "ExpressibleEnum", dependencies: ["RegexKit"]),
+        
         .testTarget(
             name: "MasterTests",
-            dependencies: ["MasterKit"])
+            dependencies: ["MasterKit", "ReferenceKit", "RegexKit", "ExpressibleEnum"])
     ]
 )

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import RegexKit
 
 // Closed Range Raw Value
 extension ClosedRange: ExpressibleByUnicodeScalarLiteral where Bound: LosslessStringConvertible {

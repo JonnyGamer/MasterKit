@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RegexKit
 
 // false < true
 extension Bool: Comparable {
@@ -33,49 +34,44 @@ public extension Int {
 
 
 
-enum Hii: Bool? {
-    typealias RawValue = Bool?
-    case boo = true
-    case bot = false
-    case too = 0 // This turns to `nil`
-}
+//enum Hii: Bool? {
+//    typealias RawValue = Bool?
+//    case boo = true
+//    case bot = false
+//    case too = 0 // This turns to `nil`
+//}
 extension Optional: ExpressibleByIntegerLiteral  {
     public init(integerLiteral value: Int) {
         self = nil
     }
 }
 
-// This syntax is super neat!
-public enum Hi: Hi?, CaseIterable {
-    // public typealias RawValue = Hi?
-    case boo = "boo"
-    case bot = "bot"
-    case too = 0
-}
-extension Hi: ExpressibleByStringLiteral {
-    public init(stringLiteral value: String) {
-        self = Hi.allCases.filter { "\($0)" == value }.first!
-    }
-}
+//// This syntax is super neat!
+//public enum Hi: Hi?, CaseIterable {
+//    // public typealias RawValue = Hi?
+//    case boo = "boo"
+//    case bot = "bot"
+//    case too = 0
+//}
+//extension Hi: ExpressibleByStringLiteral {
+//    public init(stringLiteral value: String) {
+//        self = Hi.allCases.filter { "\($0)" == value }.first!
+//    }
+//}
 
 
+//public enum ThisIsNice: String {
+//    case one = "3894983939"
+//}
+
+//public enum BoolRawValueBug: Bool {
+//    case bar = true
+//    case foo = false
+//    case bas = 1
+//    case bat = 2
+//}
 
 
-public enum ThisIsNice: String {
-    case one = "3894983939"
-    
-}
-
-
-
-
-
-public enum BoolRawValueBug: Bool {
-    case bar = true
-    case foo = false
-    case bas = 1
-    case bat = 2
-}
 
 extension Bool: ExpressibleByIntegerLiteral {
     public init(integerLiteral value: Int) { self = true }

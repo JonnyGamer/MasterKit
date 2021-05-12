@@ -6,6 +6,7 @@
 //
 
 @testable import MasterKit
+@testable import ExpressibleEnum
 import XCTest
 
 
