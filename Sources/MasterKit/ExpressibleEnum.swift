@@ -166,7 +166,7 @@ extension Array: LosslessStringConvertible where Element: LosslessStringConverti
             var count = 0
             for i in newValue {
                 if i == "[" { count += 1 }
-                if count == 0, i == " " {
+                if count == 0, i == "," {
                     elementals.append("")
                 } else if count != 0 {
                     elementals[elementals.count - 1].append(String(i))

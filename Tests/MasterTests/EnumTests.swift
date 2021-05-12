@@ -8,6 +8,8 @@
 @testable import MasterKit
 import XCTest
 
+
+
 class EnumTests: XCTestCase {
 
     
@@ -154,6 +156,48 @@ class EnumTests: XCTestCase {
         }
         XCTAssert(F.bar.rawValue == nil)
 
+    }
+    
+    
+    func testEnumConformsToArrays() {
+        
+    }
+    func testEnumConformsToMultidimensionalArrays() {
+        
+        // 2D Array
+        enum TwoDimensionalArray: [[Int]] {
+            case a1 = "[]"
+            case a2 = "[[]]"
+            case a3 = "[[0000000]]"
+            case a4 = "[[-1]]"
+            case a5 = "[[1,1,1, 1, 1, 1,     1, 1, 1,     1 ]]"
+            case a6 = "[[],[],[],[], [], [],[]   ,[], []  ,[]   ,   []]"
+            
+            case foo = "[[], [1], [2, 3], [3,2,2], [1,1,2, 3,4,4,50,00000,0,-1,-1]]"
+        }
+        XCTAssert(TwoDimensionalArray.a1.rawValue == [])
+        XCTAssert(TwoDimensionalArray.a2.rawValue == [[]])
+        XCTAssert(TwoDimensionalArray.a3.rawValue == [[0]])
+        XCTAssert(TwoDimensionalArray.a4.rawValue == [[-1]])
+        XCTAssert(TwoDimensionalArray.a5.rawValue == [[1,1,1, 1, 1, 1,     1, 1, 1,     1 ]])
+        XCTAssert(TwoDimensionalArray.a6.rawValue == [[],[],[],[], [], [],[]   ,[], []  ,[]   ,   []])
+        
+        XCTAssert(TwoDimensionalArray.foo.rawValue == [[], [1], [2, 3], [3,2,2], [1,1,2, 3,4,4,50,00000,0,-1,-1]])
+        
+        
+        // 12D Array
+        enum MagicArrayRecursion: [[[[[[[[[[[[Int]]]]]]]]]]]] {
+            case foo = "[[[[[[[[[[[[0]]]]]]]]]]]]"
+        }
+        XCTAssert(MagicArrayRecursion.foo.rawValue == [[[[[[[[[[[[0]]]]]]]]]]]])
+        
+        
+        // Even 100D Array
+        enum OneHundredDArray: [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Int]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] {
+            case foo = "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]"
+        }
+        XCTAssert(OneHundredDArray.foo.rawValue == [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]])
+        
     }
 
     
