@@ -5,8 +5,6 @@
 //  Created by Jonathan Pappas on 5/12/21.
 //
 
-import Foundation
-
 public struct Regex {
     public var this: String
     public init(_ this: String) { self.this = this }
@@ -14,6 +12,8 @@ public struct Regex {
         return the.replacingAll(matching: Regex(this), with: "") != the
     }
 }
+public extension String { var regex: Regex { return Regex(self) } }
+
 public extension String {
     func replacingAll(matching: Regex, with: Self) -> Self {
         return replacingAll(matching: matching.this, with: with)

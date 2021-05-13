@@ -18,3 +18,9 @@
 //    var wow1 = 1
 //    @Reference var foo = &wow1
 //}
+
+
+// Demo 1: https://stackoverflow.com/a/25594273/13426627
+// Demo 2: https://stackoverflow.com/a/25001045/13426627
+// Demo 3: https://stackoverflow.com/a/35180103/13426627
+
